@@ -1,0 +1,13 @@
+{
+  "model_type": "CNN",
+  "input_shape": [
+    224,
+    224,
+    3
+  ],
+  "classes": [
+    "cat",
+    "dog"
+  ],
+  "test_accuracy": 0.5400000214576721
+}
