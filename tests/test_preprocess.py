@@ -2,9 +2,6 @@
 import numpy as np
 import pytest
 from PIL import Image
-from pathlib import Path
-import tempfile
-import os
 
 
 @pytest.fixture
