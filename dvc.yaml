@@ -1,0 +1,8 @@
+stages:
+  preprocess:
+    cmd: python -m src.preprocess
+    deps:
+      - src/preprocess.py
+      - data/raw
+    outs:
+      - data/processed
