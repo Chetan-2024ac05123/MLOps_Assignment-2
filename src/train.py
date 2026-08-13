@@ -4,21 +4,19 @@ CNN model training with MLflow experiment tracking.
 Builds a 4-layer CNN, trains with data augmentation, logs everything to MLflow.
 """
 import os
-import json
-import numpy as np
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
-from pathlib import Path
-from sklearn.metrics import classification_report, confusion_matrix, ConfusionMatrixDisplay
-
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
-import tensorflow as tf
-from tensorflow import keras
-from tensorflow.keras import layers
-import mlflow
 
-from src.preprocess import load_dataset_arrays
+import json  # noqa: E402
+import matplotlib  # noqa: E402
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt  # noqa: E402
+from pathlib import Path  # noqa: E402
+from sklearn.metrics import classification_report, confusion_matrix, ConfusionMatrixDisplay  # noqa: E402
+from tensorflow import keras  # noqa: E402
+from tensorflow.keras import layers  # noqa: E402
+import mlflow  # noqa: E402
+
+from src.preprocess import load_dataset_arrays  # noqa: E402
 
 BASE_DIR = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 MODELS_DIR = BASE_DIR / "models"
@@ -116,7 +114,7 @@ def train():
     mlflow.set_tracking_uri(mlflow_uri)
     mlflow.set_experiment("cats_dogs_classification")
     print(f"\n[MLflow] Tracking URI: {mlflow_uri}")
-    print(f"[MLflow] Experiment: cats_dogs_classification")
+    print("[MLflow] Experiment: cats_dogs_classification")
 
     # Load data
     print("\n[Step 1] Loading data...")
@@ -175,7 +173,7 @@ def train():
         report = classification_report(y_test, y_pred, target_names=["Cat", "Dog"], output_dict=True)
         print(f"\n  Test Accuracy: {test_accuracy:.4f}")
         print(f"  Test Loss: {test_loss:.4f}")
-        print(f"\n  Classification Report:")
+        print("\n  Classification Report:")
         print(classification_report(y_test, y_pred, target_names=["Cat", "Dog"]))
 
         # Log test metrics
