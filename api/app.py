@@ -7,7 +7,6 @@ import logging
 from datetime import datetime
 
 from fastapi import FastAPI, File, UploadFile, HTTPException
-from fastapi.responses import JSONResponse
 from prometheus_fastapi_instrumentator import Instrumentator
 
 from src.predict import get_model, preprocess_image, predict
