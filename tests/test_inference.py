@@ -1,7 +1,7 @@
 """Unit tests for model inference functions."""
 import numpy as np
 import pytest
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 from PIL import Image
 import io
 
